@@ -5,7 +5,7 @@ import Timer from './Timer';
 import { useTimer } from '../hooks';
 
 const timer = {
-  work: 55,
+  work: 0.1,
   shortBreak: 5,
   longBreak: 10,
   stop: 0,

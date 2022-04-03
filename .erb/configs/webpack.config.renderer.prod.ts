@@ -76,6 +76,13 @@ const configuration: webpack.Configuration = {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: 'asset/resource',
       },
+      {
+        test: /\.(mp3|ogg)$/,
+        loader: 'file-loader',
+        options: {
+          name: 'assets/[name].[ext]?[hash]',
+        },
+      },
     ],
   },
 

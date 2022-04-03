@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import breakSound from '../../assets/break.mp3';
 
 const DELAY_TIME = 1000;
 
@@ -21,9 +22,18 @@ export const useInterval = (callback: () => void, delay: number | null) => {
 export const useTimer = (time: number, active: boolean) => {
   const [remainTime, setRemainTime] = useState(time);
 
+  const playBreakSound = () => {
+    const song = new Audio(breakSound);
+    song.play();
+  };
+
   useEffect(() => {
-    time > 1 && setRemainTime(time);
-  }, [time]);
+    remainTime < 1 && playBreakSound();
+  }, [remainTime]);
+
+  useEffect(() => {
+    time > 1 && active && setRemainTime(time);
+  }, [active, time]);
 
   useInterval(
     () => setRemainTime((remain) => remain - 1),
