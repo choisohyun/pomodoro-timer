@@ -85,14 +85,6 @@ a:hover {
   position: relative;
 }
 
-.filler {
-  background: #ddffcc;
-  height: 0px;
-  width: 200px;
-  position: absolute;
-  bottom: 0;
-}
-
 .buttons button {
   background: #4da6ff;
   border: none;
@@ -115,7 +107,7 @@ button.longBreak {
 }
 
 button.stop {
-  background: #f00;
+  background: #ef4646;
 }
 
 /* progress bar */

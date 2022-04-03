@@ -86,7 +86,6 @@ const TimerWrapper = () => {
           <div className="value">
             <Timer time={timer[mode] * 60} active={active} />
           </div>
-          <div className="filler" />
         </div>
       </div>
     </div>
